@@ -1,9 +1,14 @@
 {
   "name": "rollup-umd",
+  "author": "Andy Axton",
   "version": "1.0.0",
   "description": "A simple starter for UMD libraries",
   "main": "dist/bundle.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a-axton/rollup-umd"
+  },
   "config": {
     "moduleName": "Library"
   },
