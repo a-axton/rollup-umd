@@ -7,7 +7,6 @@ import eslint from 'rollup-plugin-eslint';
 import { minify } from 'uglify-js';
 
 const isProd = process.env.PROD;
-const moduleName = require('./package.json').config.moduleName;
 const plugins = [
   eslint(),
   json(),
@@ -21,10 +20,8 @@ if (isProd) {
 }
 
 export default {
-  entry: 'lib/main.js',
-  format: 'umd',
-  moduleName,
+  entry: 'assets/js/main.js',
   plugins,
-  dest: `dist/${moduleName}.js`,
+  dest: `dist/main.js`,
   sourceMap: !isProd
 };

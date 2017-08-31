@@ -13,7 +13,10 @@
     "moduleName": "Library"
   },
   "scripts": {
-    "start": "rollup -c --watch",
+    "start": "yarn run js | yarn run styles | yarn run browser-sync",
+    "js": "rollup -c --watch",
+    "styles": "node-sass assets/styles/main.scss dist/main.css --watch assets/styles",
+    "browser-sync": "browser-sync start --server 'dist' --files 'dist' --ss 'public'",
     "build": "rollup -c --environment PROD:true"
   },
   "devDependencies": {
@@ -35,5 +38,9 @@
     "rollup-plugin-uglify": "^1.0.1",
     "rollup-watch": "^3.2.2",
     "uglify-js": "^2.8.18"
+  },
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "node-sass": "^4.5.3"
   }
 }
