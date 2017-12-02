@@ -10,7 +10,10 @@ const isProd = process.env.PROD;
 const plugins = [
   eslint(),
   json(),
-  babel({ exclude: 'node_modules/**' }),
+  babel({
+    exclude: 'node_modules/**',
+    plugins: ['external-helpers']
+  }),
   nodeResolve({ jsnext: true, main: true }),
   commonjs()
 ];
@@ -20,8 +23,11 @@ if (isProd) {
 }
 
 export default {
-  entry: 'assets/js/main.js',
+  input: 'assets/js/main.js',
   plugins,
-  dest: `dist/main.js`,
+  output: {
+    file: `dist/bundle.js`,
+    format: 'umd'
+  },
   sourceMap: !isProd
 };

@@ -1,9 +1,9 @@
 {
-  "parser"  : "babel-eslint",
-  "extends" : [
+  "parser": "babel-eslint",
+  "extends": [
     "standard"
   ],
-  "env"     : {
+  "env": {
     "browser" : true
   },
   "rules": {
